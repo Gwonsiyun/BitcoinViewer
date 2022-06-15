@@ -29,6 +29,7 @@ function App() {
             }
         }
     },[coinSelect]);
+
     return (
         <div>
             <h1>The Coins {loading? "" : `(${coins.length})`}</h1>
