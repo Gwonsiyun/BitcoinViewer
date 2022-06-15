@@ -5,7 +5,7 @@ function Coloring({text}){
     let b = priceWON.substring(priceWON.indexOf("."));
 
     return (
-        <span>{a}<span style={{color:"red",}}>{b}</span></span>
+        <>{a}<span style={{color:"red",}}>{b}</span></>
     );
 }
 

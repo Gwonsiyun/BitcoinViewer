@@ -34,15 +34,20 @@ function App() {
     return (
         <div>
             <h1>The Coins {loading? "" : `(${coins.length})`}</h1>
-            {loading ? <strong>Loading....</strong> : null}
-            <input type={'text'} list={'list'} id={'coinSelect'} onChange={select}/>
-            <datalist id={'list'} >
-                {coins.map((coin,index) => <option key={index} value={coin.name}>{coin.name}</option>)}
-            </datalist>
-            <div><span>select coin</span></div>
-            <ul>
-                {viewCoins.map((coin,index)=><li key={index}>{coin.name} ({coin.symbol}): <Coloring text={coin.quotes.USD.price}></Coloring>원</li>)}
-            </ul>
+            {loading ? (
+                <strong>Loading....</strong>
+            ) : (<>
+                    <input type={'text'} list={'list'} id={'coinSelect'} onChange={select}/>
+                    <datalist id={'list'} >
+                    {coins.map((coin,index) => <option key={index} value={coin.name}>{coin.name}</option>)}
+                    </datalist>
+                    <div><span>select coin</span></div>
+                    <ul>
+                    {viewCoins.map((coin,index)=><li key={index}>{coin.name} ({coin.symbol}): <Coloring text={coin.quotes.USD.price}></Coloring>원</li>)}
+                    </ul>
+                </>
+            )}
+
         </div>
     );
 }
