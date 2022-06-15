@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import Coloring from "./Coloring";
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
             </datalist>
             <div><span>select coin</span></div>
             <ul>
-                {viewCoins.map((coin,index)=><li key={index}>{coin.name} ({coin.symbol}): {(Math.round((coin.quotes.USD.price)*1292.49*1000)/1000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</li>)}
+                {viewCoins.map((coin,index)=><li key={index}>{coin.name} ({coin.symbol}): <Coloring text={coin.quotes.USD.price}></Coloring>원</li>)}
             </ul>
         </div>
     );
